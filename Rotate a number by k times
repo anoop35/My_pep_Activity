@@ -1,0 +1,38 @@
+import java.util.*;
+   
+   public class Main{
+   
+   public static void main(String[] args) {
+     // write your code here  
+     Scanner scn=new Scanner(System.in);
+     int n=scn.nextInt();
+     int k=scn.nextInt();
+     int num=n;
+     int count=0;
+     while(num>0)
+     {
+         num/=10;
+         count++;
+     }
+     k=k%count;
+     if(k>=0)
+     {
+     int div=(int)Math.pow(10,k);
+     int num1=n%div;
+     int num2=n/div;
+     num1=num1*(int)Math.pow(10,(count-k));
+     int res=num1+num2;
+     System.out.print(res);
+     }
+     else if(k<0)
+     {
+         k*=-1;
+         int div=(int)Math.pow(10,(count-k));
+     int num1=n%div;
+     int num2=n/div;
+     num1=num1*(int)Math.pow(10,k);
+     int res=num1+num2;
+     System.out.print(res);
+     }
+    }
+   }
