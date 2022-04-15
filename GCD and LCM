@@ -1,0 +1,44 @@
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      // write your code here  
+      Scanner scn=new Scanner(System.in);
+      int num1=scn.nextInt();
+      int num2=scn.nextInt();
+      int n1=num1,n2=num2;
+      int i=1,fact1=2,fact2=2;
+      int gcd=1;
+      int test=1;
+      if(num1>=num2)
+      {
+          test=num1;
+      }
+      else
+      {
+          test=num2;
+      }
+      while(i<=test/2)
+      {
+          if(num1%fact1==0 && num2%fact2==0)
+          {
+              num1=num1/fact1;
+              num2=num2/fact2;
+              if(fact1==fact2)
+              {
+               gcd*=fact1;   
+              }
+              
+          }
+          else
+              {
+                  fact1++;
+                  fact2++;
+              }
+          i++;
+      }
+      int lcm=(n1*n2)/gcd;
+      System.out.print(gcd+"\n"+lcm);
+     }
+    }
